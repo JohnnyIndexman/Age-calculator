@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Manrope:wght@800&family=Poppins:ital,wght@0,600;0,800;1,600&display=swap');
+
+
 *{
    margin: 0;
    padding: 0;
@@ -29,8 +32,10 @@ input{
 }
 
 input:focus{
-   border-color: red !important;
-   box-shadow: 4px 4px 4px 4px red;
+   border: 1px solid red;
+   box-shadow: 0 0 3px red;
+   outline-offset: 0px;
+   outline: none;
 }
 
 .container{
@@ -38,7 +43,7 @@ input:focus{
    background-color: hsl(0, 0%, 100%);
    padding: 30px;
    margin:  auto;
-   height: 55%;
+   height: 60%;
    width: 40%;
    border-radius: 15px 15px 120px 15px;
 
@@ -68,8 +73,8 @@ input:focus{
    border: none;
    background-color: hsl(259, 100%, 65%);
    position: absolute;
-   top: 85px;
-   left: 750px;
+   top: 90px;
+   left: 780px;
 }
 
 label{
