@@ -1,13 +1,154 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+   margin: 0;
+   padding: 0;
+   overflow: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+form{
+   width: 100%;
+   background-color: hsl(0, 0%, 100%);
+}
+
+.container{
+   padding: 20px 50px 20px 50px;
+   background-color: hsl(0, 0%, 86%);
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+}
+
+.form{
+   display: flex;
+   gap: 20px;
+   margin-bottom: 30px;
+}
+
+input{
+   width: 70px;
+   height: 30px;
+}
+
+input:focus{
+   border-color: red !important;
+   box-shadow: 4px 4px 4px 4px red;
+}
+
+.container{
+   box-sizing: border-box;
+   background-color: hsl(0, 0%, 100%);
+   padding: 30px;
+   margin:  auto;
+   height: 55%;
+   width: 40%;
+   border-radius: 15px 15px 120px 15px;
+
+}
+
+.contain{
+   background-color: gray;
+   height: 100vh;
+   margin: auto;
+}
+
+.form > div{
+   display: flex;
+   flex-direction: column;
+}
+
+.form span{
+   color: red;
+   font-size: 10px;
+   display: none;
+}
+
+.form-btn{
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+   border: none;
+   background-color: hsl(259, 100%, 65%);
+   position: absolute;
+   top: 85px;
+   left: 750px;
+}
+
+label{
+   margin-bottom: 8px;
+}
+
+.divide{
+   width: 90%;
+   box-sizing: border-box;
+   border: 1px solid hsl(0, 1%, 44%);
+   margin-bottom: 20px;
+}
+
+.form label{
+   font-size: 12px;
+   font-family: 'Poppins';
+}
+
+.form input{
+   font-weight: bolder;
+   font-family: 'Poppins';
+   padding-left: 10px;
+
+}
+
+span{
+   color: hsl(259, 100%, 65%);
+   font-family: 'Poppins';
+}
+
+h1{
+   font-size: 50px;
+   font-style: italic;
+   font-family: 'Poppins';
+}
+
+@media screen and (max-width : 500px){
+
+   h1{
+       font-size: 25px;
+   }
+
+   .main{
+       padding: 30px;
+       margin: 20px;
+       width: 100%;
+       border-radius: 15px 15px 60px 15px;
+       height: 100%;
+   
+   }
+
+   .underline{
+       width: 100%;
+   }
+
+   .form{
+       gap: 10px;
+   }
+
+   input{
+       width: 30px;
+       height: 20px;
+   }
+
+   .container{
+       padding: 20px;
+   }
+
+   .form-btn{
+       position: absolute;
+       top: 80px;
+       left: 300px;
+       width:25px ;
+       height: 25px;
+   }
+
+   .form label{
+      font-size: 8px;
+   }
+   
+
 }
