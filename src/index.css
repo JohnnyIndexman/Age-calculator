@@ -38,6 +38,21 @@ input:focus{
    outline: none;
 }
 
+#day{
+   color: red;
+   font-size: 10px;
+}
+
+#months{
+   color: red;
+   font-size: 10px;
+}
+
+#years{
+   color: red;
+   font-size: 10px;
+}
+
 .container{
    box-sizing: border-box;
    background-color: hsl(0, 0%, 100%);
@@ -60,11 +75,11 @@ input:focus{
    flex-direction: column;
 }
 
-.form span{
+/*.form span{
    color: red;
    font-size: 10px;
-   display: none;
-}
+   display: block;
+}*/
 
 .form-btn{
    border-radius: 50%;
