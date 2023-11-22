@@ -17,48 +17,60 @@ function Form() {
   let monthly = 1 + date.getMonth()
   let yearly = date.getFullYear()
   const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-  let isValid = false
+  const [isValid, setIsValid] = useState(false)
 
-  const dayChange = () =>{
-    if (day > 31){
-        isValid = false
-        setDayError('this field is require!!!')
+  const dayChange = (e) =>{
+    if (day < 1){
+        setIsValid( false)
+        setDayError('this field is required!!!')
+    }
+    else if(day > 31){
+      setIsValid( false)
+      setDayError('must be a valid date!!!')
     }
     else{
       setDayError('')
-      isValid = true
+      setIsValid( true)
     }
 }
 
-const monthChange = () =>{
-  if (month > 12){
-    setMonthError('this field is require!!!')
-      isValid = false
+const monthChange = (e) =>{
+  if (month < 1){
+    setMonthError('this field is required!!!')
+    setIsValid( false)
+  }
+  else if(month > 12){
+    setMonthError('must be a valid month!!!')
+    setIsValid( false)
   }
   else{
     setMonthError('')
-    isValid = true
+    setIsValid( true)
   }
 }
 
-const yearChange = () =>{
+const yearChange = (e) =>{
   if (year > yearly){
-    setYearError('this field is require!!!')
-      isValid = false
+    setYearError('must be a valid year!!!')
+    setIsValid(false)
+  }
+  else if(year < 1){
+    setYearError('must be a valid year!!!')
+    setIsValid( false)
   }
   else{
     setYearError('')
-    isValid = true
+    setIsValid( true)
   }
 }
 
   const handleSubmit = (e) => {
-    if(isValid){
     e.preventDefault()
+    if(isValid){
     if (day > today) {
       today = today + months[monthly - 1]
     }
-    if (month > monthly) {
+    else if (month > monthly) {
       monthly = monthly + 12
       yearly = yearly - 1
     }
@@ -70,9 +82,9 @@ const yearChange = () =>{
     setDayUpdate(d)
     setMonthUpdate(m)
     setYearUpdate(y)
-  }
+    }
   else{
-    alert('error!!!')
+    alert('Fill the forms correctly!!!')
   }
 }
 
@@ -89,13 +101,13 @@ const yearChange = () =>{
             <input type="number" value={day}
               placeholder='DD' maxLength='2'
               onChange={(e) =>{
-                dayChange()
                 setDay(e.target.value)
+                dayChange()
               }}
               className='day'
               important
             />
-            <span id='day'>{dayError}</span>
+            {dayError &&<span id='day'>{dayError}</span>}
 
           </div>
           <div id="month">
@@ -104,12 +116,14 @@ const yearChange = () =>{
               placeholder='MM' maxLength='2'
               value={month}
               onChange={(e) =>{ monthChange() 
-                setMonth(e.target.value)}
+                setMonth(e.target.value)
+              }
+                
               }
               className='month'
               important
             />
-            <span id='months'>{monthError}</span>
+            {monthError && <span id='months'>{monthError}</span>}
 
           </div>
           <div id="year">
@@ -118,13 +132,14 @@ const yearChange = () =>{
               placeholder='YYYY' maxLength='4'
               value={year}
               onChange={(e) => { yearChange()
-                setYear(e.target.value)}
+                setYear(e.target.value)
+              }
               }
               className='year'
               important
               minLength='4'
             />
-            <span id='years'>{yearError}</span>
+            {yearError && <span id='years'>{yearError}</span>}
 
           </div>
           </div>
@@ -140,9 +155,9 @@ const yearChange = () =>{
 
         </form>
        
-        <h1><span className='y'>{dayUpdate}</span> years</h1>
-        <h1><span className='m'>{monthUpdate}</span> months</h1>
-        <h1><span className='d'>{yearUpdate}</span> days</h1>
+        {dayUpdate && <h1><span className='y'>{dayUpdate}</span> years</h1>}
+        {monthUpdate && <h1><span className='m'>{monthUpdate}</span> months</h1>}
+        {yearUpdate && <h1><span className='d'>{yearUpdate}</span> days</h1>}
       </div>
     </div>
   )
