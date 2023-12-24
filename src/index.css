@@ -126,7 +126,7 @@ h1{
    font-family: 'Poppins';
 }
 
-@media screen and (max-width : 500px){
+@media screen and (max-width : 600px){
 
    h1{
        font-size: 25px;
