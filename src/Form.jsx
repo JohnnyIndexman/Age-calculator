@@ -76,7 +76,7 @@ function Form() {
 
  const handleSubmit = (e) => {
   e.preventDefault()
-  if (validateField) {
+  if (!monthError && !dayError&& !yearError ) {
     if (objects.day > today) {
       today = today + months[monthly - 1]
     }
